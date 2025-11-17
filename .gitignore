@@ -1,0 +1,11 @@
+# General
+*/.idea
+.idea
+.mvn
+.DS_Store
+*.iml
+
+
+
+# Project exclude paths
+/target/
