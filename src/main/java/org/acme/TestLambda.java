@@ -24,7 +24,7 @@ public class TestLambda implements RequestHandler<InputObject, OutputObject> {
     try {
       appConfigClient.getConfig();
     } catch (Exception exception) {
-      LOG.info("Exception caught in TestLambda::handleRequest", exception);
+      LOG.info("Exception caught in TestLambda::handleRequest");
     }
     return service.process(input).setRequestId(context.getAwsRequestId());
   }

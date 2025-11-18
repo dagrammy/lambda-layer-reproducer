@@ -13,7 +13,10 @@ Add AppConfig layer and `DISABLE_SIGNAL_HANDLERS` env var to `target/manage.sh`.
     --layers "arn:aws:lambda:eu-central-1:066940009817:layer:AWS-AppConfig-Extension-Arm64:132" \
 ```
 
-Complete example of  `target/manage.sh`:
+For x86-64 platform use:
+`arn:aws:lambda:eu-central-1:066940009817:layer:AWS-AppConfig-Extension:189`
+
+Complete example of `cmd_create()` in  `target/manage.sh`:
 ```
 function cmd_create() {
   echo Creating function
@@ -35,7 +38,7 @@ function cmd_create() {
 }
 ```
 
-The memory size is important! Only using 256M did not trigger the error.
+The memory size is important! Only using 256M did not trigger the error. So memory is set with `--memory-size 1024`.
 Assumption: Shutdown duration was too long.
 
 Now run the lambda with the example payload:
